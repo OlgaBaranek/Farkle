@@ -1,7 +1,5 @@
 # FARKLE-dice-game
 
-// game functionality is ready / code improvements in progress //
-
 Farkle is a popular dice game, here designed for two players only.
 
 Players roll different dice combinations with six dice. Each player can win by scoring 10,000 or more points.
