@@ -308,6 +308,12 @@ function generateNumbers() {
       // console.log(diceResults[i]);
     } else continue;
   }
+
+  analytics.track('Dice Rolled', {
+    text: 'dice results: ' + diceResults,
+    player_number: activePlayer + 1,
+  })
+  
   console.log('dice results:', diceResults);
 }
 
@@ -315,6 +321,8 @@ function generateNumbers() {
 
 rollBtn.addEventListener('click', function () {
   console.log('ROLL btn clicked.');
+
+
 
   // unlocking initial block and allowing clicks on current dice
   for (let i = 0; i < diceImages.length; i++) {
@@ -326,7 +334,8 @@ rollBtn.addEventListener('click', function () {
   rollBtn.classList.remove('active-btn');
   rollBtn.classList.add('non-active-btn', 'avoid-clicks');
   message.textContent = 'Choose dice by clicking on it';
-});
+
+
 
 // choosing dice by clicking on it (+ unclicking)
 
