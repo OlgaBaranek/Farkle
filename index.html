@@ -20,6 +20,12 @@
   analytics.load("i8WVFfvrICvM3oCEUp5broaqdA5tT5Jv");
   analytics.page();
   }}();
+      const trackDiceRoll = (text, playerNumber) => {
+        analytics.track('Dice Rolled', {
+          text: text,
+          player_number: playerNumber,
+        });
+      }
     </script> 
   </head>
 
@@ -120,7 +126,7 @@
             <div class="section__empty"></div>
             <div class="section__empty"></div>
 
-            <button class="btn" id="roll">ROLL</button>
+            <button onclick="trackDiceRoll('Olga', 1)" class="btn" id="roll">ROLL</button>
             <button class="btn" id="check">CHECK SCORE</button>
             <button class="btn" id="add">ADD SCORE</button>
             <button class="btn" id="keep">KEEP ROLLING</button>
