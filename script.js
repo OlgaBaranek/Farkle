@@ -309,10 +309,7 @@ function generateNumbers() {
     } else continue;
   }
 
-  analytics.track('Dice Rolled', {
-    text: 'dice results: ' + diceResults,
-    player_number: activePlayer + 1,
-  })
+
   
   console.log('dice results:', diceResults);
 }
@@ -322,8 +319,11 @@ function generateNumbers() {
 rollBtn.addEventListener('click', function () {
   console.log('ROLL btn clicked.');
 
-
-
+  analytics.track('Dice Rolled', {
+    text: 'some text',
+    player_number: activePlayer + 1,
+  });
+  
   // unlocking initial block and allowing clicks on current dice
   for (let i = 0; i < diceImages.length; i++) {
     diceImages[i].classList.remove('dice--blocked--init', 'avoid-clicks');
